@@ -5,7 +5,10 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden; /* 🚀 Hides scrollbar */
   background-color: #f9f9f9;
   color: #333;
 }
@@ -73,19 +76,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh; /* take almost full screen height */
+  height: 100vh; /* full viewport height */
   padding: 40px 20px;
   background: linear-gradient(to right, #f0f9ff, #ffffff);
 }
 
 .content-box {
   display: flex;
-  justify-content: center;   /* center horizontally */
-  align-items: center;       /* center vertically */
+  justify-content: center;
+  align-items: center;
   max-width: 1200px;
   width: 100%;
   gap: 40px;
-  text-align: center;        /* make text center aligned */
+  text-align: center;
 }
 
 .text-content {
@@ -97,7 +100,6 @@ body {
   font-size: 48px;
   color: #0a66c2;
   margin-bottom: 15px;
-  
 }
 
 .text-content h2 {
@@ -132,7 +134,7 @@ body {
 
 .image-content {
   flex: 1;
-  text-align: center; /* center image */
+  text-align: center;
   animation: fadeInUp 1.2s ease forwards;
 }
 
@@ -148,5 +150,24 @@ body {
   .content-box {
     flex-direction: column;
   }
-}
 
+  .nav-items {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .nav-items.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
